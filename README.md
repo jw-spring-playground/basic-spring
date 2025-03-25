@@ -7,6 +7,27 @@
 - 상품의 목록을 조회할 수 있다.
 - 상품은 이름, 가격, 설명으로 구성된다.
 
+| 필드 이름      | 데이터 타입       | 설명       |
+|------------|--------------|----------|
+| name       | String       | 상품의 이름   |
+| price      | BigDecimal   | 상품의 가격   |
+| count      | Long         | 상품의 가격   |
+| description | String       | 상품의 설명   |
+| createdAt  | LocalDateTime | 생성 일시    |
+| updatedAt  | LocalDateTime | 수정 일시    |
+
+### 상품 등록
+- 상품 신청은 부모님이 할 수 있다.
+- 등록은 산타만 할 수 있다.
+
+| 필드 이름       | 데이터 타입       | 설명       |
+|-------------|--------------|----------|
+| productId   | Long         | 상품 ID    |
+| isRegistered| Boolean      | 등록 여부   |
+| parentId    | Long         | 부모 ID    |
+| createdAt   | LocalDateTime | 생성 일시    |
+| updatedAt   | LocalDateTime | 수정 일시    |
+
 ### 부모님들
 
 | 필드 이름            | 데이터 타입         | 설명       |
@@ -52,3 +73,5 @@
 - 상품의 목록에 없는 것을 신청할 수 있다.
     - 상품의 이름에는 비속어가 포함될 수 없다.
     - 신청이 거절될 수 있다.
+
+

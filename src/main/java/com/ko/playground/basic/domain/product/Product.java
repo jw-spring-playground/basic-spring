@@ -16,6 +16,9 @@ public class Product extends BaseEntity {
     @Column(name = "price", nullable = false)
     private Long price;
 
+    @Column(name = "count", nullable = false)
+    private Long count;
+
     @Column(name = "description")
     private Long description = null;
 
