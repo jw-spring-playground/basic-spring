@@ -1,4 +1,4 @@
-package com.ko.playground.basic.domain.santa;
+package com.ko.playground.basic.core.santa.domain;
 
 import com.ko.playground.basic.support.BaseEntity;
 import jakarta.persistence.Column;

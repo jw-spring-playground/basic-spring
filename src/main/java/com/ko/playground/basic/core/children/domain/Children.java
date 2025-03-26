@@ -1,4 +1,4 @@
-package com.ko.playground.basic.domain.children;
+package com.ko.playground.basic.core.children.domain;
 
 import com.ko.playground.basic.support.BaseEntity;
 import jakarta.persistence.Column;
@@ -23,8 +23,8 @@ public class Children extends BaseEntity {
     @Column(name = "year_of_birth", nullable = false)
     private Long yearOfBirth;
 
-    @Column(name = "delivery_zone_id", nullable = false)
-    private Long deliveryZoneId;
+    @Column(name = "delivery_zone_id")
+    private Long deliveryZoneId = null;
 
     @Column(name = "parent_id")
     private Long parentId;

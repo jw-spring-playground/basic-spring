@@ -1,4 +1,4 @@
-package com.ko.playground.basic.domain.children;
+package com.ko.playground.basic.core.children.domain;
 
 import jdk.jfr.Description;
 import org.junit.jupiter.api.Test;

@@ -1,4 +1,4 @@
-package com.ko.playground.basic.domain.productregistration;
+package com.ko.playground.basic.core.productregistration.domain;
 
 import com.ko.playground.basic.support.BaseEntity;
 import jakarta.persistence.Column;
