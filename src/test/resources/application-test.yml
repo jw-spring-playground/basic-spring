@@ -1,6 +1,4 @@
 spring:
-  profiles:
-    active: local
   application:
     name: "basic"
   jpa:
@@ -11,3 +9,24 @@ spring:
       ddl-auto: create
     show-sql: true
     open-in-view: true
+  properties:
+    hibernate:
+      show_sql: false
+      format_sql: false
+      use_sql_comments: false
+      # IN?? ???? ??
+      default_batch_fetch_size: 100
+    datasource:
+      basic:
+        pool-name: default-hikari-pool
+        jdbc-url: jdbc:h2:mem:basic
+        username: sa
+        password: password
+        type: org.springframework.jdbc.datasource.SimpleDriverDataSource
+        maximum-pool-size: 10
+        driver-class-name: org.h2.Driver
+        read-only: false
+        validation-timeout: 500
+        connection-timeout: 30000
+        keepalive-time: 0
+        auto-commit: true
