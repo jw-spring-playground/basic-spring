@@ -17,15 +17,18 @@ public class ProductRegistration extends BaseEntity {
     @Column(name = "product_id", nullable = false)
     private Long productId;
 
+    @Builder.Default
     @Column(name = "is_registered", nullable = false)
     private Boolean isRegistered = false;
 
     @Column(name = "parent_id", nullable = false)
     private Long parentId;
 
+    @Builder.Default
     @Column(name = "created_at", nullable = false)
     private LocalDateTime createdAt = LocalDateTime.now();
 
+    @Builder.Default
     @Column(name = "updated_at", nullable = false)
     private LocalDateTime updatedAt = LocalDateTime.now();
 

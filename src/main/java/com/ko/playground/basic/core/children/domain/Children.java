@@ -23,15 +23,18 @@ public class Children extends BaseEntity {
     @Column(name = "year_of_birth", nullable = false)
     private Long yearOfBirth;
 
+    @Builder.Default
     @Column(name = "delivery_zone_id")
     private Long deliveryZoneId = null;
 
     @Column(name = "parent_id")
     private Long parentId;
 
+    @Builder.Default
     @Column(name = "created_at", nullable = false)
     private LocalDateTime createdAt = LocalDateTime.now();
 
+    @Builder.Default
     @Column(name = "updated_at", nullable = false)
     private LocalDateTime updatedAt = LocalDateTime.now();
 
