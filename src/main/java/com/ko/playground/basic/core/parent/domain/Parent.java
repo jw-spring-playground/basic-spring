@@ -4,11 +4,13 @@ import com.ko.playground.basic.support.BaseEntity;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import lombok.Getter;
+import lombok.Setter;
 
 import java.time.LocalDateTime;
 
 @Getter
-@Entity
+@Setter
+@Entity(name = "parent")
 public class Parent extends BaseEntity {
     @Column(name = "email", nullable = false)
     private String email;

@@ -23,7 +23,7 @@ spring:
       exception-override-class-name: software.amazon.jdbc.util.HikariCPSQLException
     basic:
       pool-name: default-hikari-pool
-      jdbc-url: jdbc:aws-wrapper:mysql://${MYSQL_HOST:localhost:3306/shopping_cart}?serverTimezone=UTC&characterEncoding=UTF-8&rewriteBatchedStatements=true
+      jdbc-url: jdbc:aws-wrapper:mysql://${MYSQL_HOST:localhost:3306/shopping_cart}?serverTimezone=UTC&characterEncoding=UTF-8&rewriteBatchedStatements=TRUE
       username: ${MYSQL_USER:root}
       password: ${MYSQL_PASSWORD:hhhh}
       maximum-pool-size: 10

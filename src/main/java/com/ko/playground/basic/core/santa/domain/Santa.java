@@ -8,7 +8,7 @@ import lombok.Getter;
 import java.time.LocalDateTime;
 
 @Getter
-@Entity
+@Entity(name = "santa")
 public class Santa extends BaseEntity {
     @Column(name = "email", nullable = false)
     private String email;

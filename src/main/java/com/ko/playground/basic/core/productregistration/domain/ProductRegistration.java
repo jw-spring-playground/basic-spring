@@ -11,7 +11,7 @@ import java.time.LocalDateTime;
 
 @Getter
 @Builder
-@Entity
+@Entity(name = "product_registration")
 @AllArgsConstructor
 public class ProductRegistration extends BaseEntity {
     @Column(name = "product_id", nullable = false)

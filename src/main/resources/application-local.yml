@@ -1,13 +1,18 @@
 spring:
-  profiles:
-    active: local
   application:
     name: "basic"
   jpa:
-    database: h2
-    database-platform: org.hibernate.dialect.H2Dialect
+    database: mysql
+    database-platform: org.hibernate.dialect.MySQLDialect
     generate-ddl: true
     hibernate:
-      ddl-auto: create
+      ddl-auto: update
     show-sql: true
-    open-in-view: true
+    open-in-view: false
+    properties:
+      hibernate:
+        show_sql: true
+        format_sql: true
+        use_sql_comments: false
+        # IN?? ???? ??
+        default_batch_fetch_size: 100

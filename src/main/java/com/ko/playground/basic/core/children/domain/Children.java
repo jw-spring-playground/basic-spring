@@ -11,8 +11,8 @@ import java.time.LocalDateTime;
 
 @Getter
 @Builder
-@Entity
 @AllArgsConstructor
+@Entity(name = "children")
 public class Children extends BaseEntity {
     @Column(name = "name", nullable = false)
     String name;
