@@ -28,6 +28,8 @@ dependencies {
 	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'
 
+	implementation 'org.springframework.boot:spring-boot-starter-security'
+
 	// DB
 	implementation 'software.amazon.jdbc:aws-advanced-jdbc-wrapper:2.5.3'
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
