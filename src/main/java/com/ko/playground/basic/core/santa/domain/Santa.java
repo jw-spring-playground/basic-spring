@@ -3,12 +3,17 @@ package com.ko.playground.basic.core.santa.domain;
 import com.ko.playground.basic.support.BaseEntity;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+import lombok.AccessLevel;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
 
 @Getter
-@Entity(name = "santa")
+@Entity
+@Table(name = "santa")
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class Santa extends BaseEntity {
     @Column(name = "email", nullable = false)
     private String email;
@@ -24,14 +29,6 @@ public class Santa extends BaseEntity {
 
     @Column(name = "updated_at", nullable = false)
     private LocalDateTime updatedAt = LocalDateTime.now();
-
-    public Santa() {
-        this.email = getEmail();
-        this.encryptedPassword = getEncryptedPassword();
-        this.deliveryZoneId = getDeliveryZoneId();
-        createdAt = getCreatedAt();
-        updatedAt = getUpdatedAt();
-    }
 
     public Santa(String email, String encryptedPassword) {
         this.email = email;

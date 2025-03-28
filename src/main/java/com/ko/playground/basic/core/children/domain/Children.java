@@ -1,63 +1,42 @@
 package com.ko.playground.basic.core.children.domain;
 
 import com.ko.playground.basic.support.BaseEntity;
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
+import jakarta.persistence.*;
+import lombok.*;
 
 import java.time.LocalDateTime;
 
 @Getter
-@Builder
+@Entity
+@Table(name = "children")
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor
-@Entity(name = "children")
 public class Children extends BaseEntity {
     @Column(name = "name", nullable = false)
     String name;
 
+    @Enumerated(EnumType.STRING)
     @Column(name = "sex", nullable = false)
     private Sex sex;
 
     @Column(name = "year_of_birth", nullable = false)
     private Long yearOfBirth;
 
-    @Builder.Default
     @Column(name = "delivery_zone_id")
     private Long deliveryZoneId = null;
 
     @Column(name = "parent_id")
     private Long parentId;
 
-    @Builder.Default
     @Column(name = "created_at", nullable = false)
     private LocalDateTime createdAt = LocalDateTime.now();
 
-    @Builder.Default
     @Column(name = "updated_at", nullable = false)
     private LocalDateTime updatedAt = LocalDateTime.now();
 
-    public Children() {
-        this.name = getName();
-        this.sex = getSex();
-        this.yearOfBirth = getYearOfBirth();
-        this.deliveryZoneId = getDeliveryZoneId();
-        this.parentId = getParentId();
-        this.createdAt = LocalDateTime.now();
-        this.updatedAt = LocalDateTime.now();
-    }
-
+    @Builder
     public static Children create(String name, Sex sex, Long yearOfBirth, Long deliveryZoneId, Long parentId) {
-        return Children.builder()
-            .name(name)
-            .sex(sex)
-            .yearOfBirth(yearOfBirth)
-            .deliveryZoneId(deliveryZoneId)
-            .parentId(parentId)
-            .createdAt(LocalDateTime.now())
-            .updatedAt(LocalDateTime.now())
-            .build();
+        return new Children(name, sex, yearOfBirth, deliveryZoneId, parentId, LocalDateTime.now(), LocalDateTime.now());
     }
 
     public boolean checkAdult() {

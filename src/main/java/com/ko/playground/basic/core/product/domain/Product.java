@@ -3,12 +3,17 @@ package com.ko.playground.basic.core.product.domain;
 import com.ko.playground.basic.support.BaseEntity;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+import lombok.AccessLevel;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
 
 @Getter
-@Entity(name = "product")
+@Entity
+@Table(name = "product")
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class Product extends BaseEntity {
     @Column(name = "name", nullable = false)
     private String name;
