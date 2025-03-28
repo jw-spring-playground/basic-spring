@@ -24,10 +24,7 @@ public class ParentTest extends UseCaseTest {
         String encodedPassword = passwordEncoder.encode(password);
         String wrongEncodedPassword = passwordEncoder.encode(wrongPassword);
 
-        Parent parent = Parent.builder()
-                .email(email)
-                .encryptedPassword(encodedPassword)
-                .build();
+        Parent parent = Parent.create(email, encodedPassword);
 
         assertThrows(IllegalArgumentException.class, () -> parent.verifyPassword(passwordEncoder, wrongEncodedPassword));
 

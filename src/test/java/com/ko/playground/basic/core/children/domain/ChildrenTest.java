@@ -1,33 +1,18 @@
 package com.ko.playground.basic.core.children.domain;
 
+import com.ko.playground.basic.support.UseCaseTest;
 import jdk.jfr.Description;
 import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.transaction.annotation.Transactional;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
-@SpringBootTest
-@Transactional
-class ChildrenTest {
+class ChildrenTest extends UseCaseTest {
     @Description("성인 여부 확인")
     @Test
     void toCheckAdult() {
-        Children adult = Children.builder()
-            .name("John")
-            .sex(Sex.FEMALE)
-            .yearOfBirth(2000L)
-            .deliveryZoneId(1L)
-            .parentId(1L)
-                .build();
-
-        Children children = Children.builder()
-                .name("John")
-                .sex(Sex.FEMALE)
-                .yearOfBirth(2007L)
-                .deliveryZoneId(1L)
-                .parentId(1L)
-                .build();
+        Children adult = Children.create("John", Sex.FEMALE, 2000L, 1L, 1L);
+        Children children = Children.create("John", Sex.FEMALE, 2007L, 1L, 1L);
 
         assertTrue(adult.checkAdult());
         assertFalse(children.checkAdult());
