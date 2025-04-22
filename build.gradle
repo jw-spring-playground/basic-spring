@@ -45,3 +45,16 @@ dependencies {
 tasks.named('test') {
 	useJUnitPlatform()
 }
+
+task generatePackageInfo(type: JavaExec) {
+	group = 'build setup'
+	description = 'Generate package-info.java files in all Java packages'
+
+	classpath = sourceSets.main.runtimeClasspath
+	mainClass = 'com.ko.playground.basic.support.PackageInfoGenerator'
+
+	doFirst {
+		args = [file('src/main/java').absolutePath]
+	}
+}
+

@@ -15,7 +15,7 @@ class ProductTest extends UseCaseTest {
         Long price = 1000L;
         Long count = 10L;
         Long description = 1L;
-        ProductStatus status = ProductStatus.UNREGISTERED;
+        ProductStatus status = ProductStatus.ACTIVE;
 
         // when
         Product product = Product.create(name, price, description, count, status);
@@ -25,7 +25,7 @@ class ProductTest extends UseCaseTest {
         assertEquals(price, product.getPrice());
         assertEquals(count, product.getCount());
         assertEquals(description, product.getDescription());
-        assertEquals(ProductStatus.UNREGISTERED, product.getStatus());
+        assertEquals(ProductStatus.ACTIVE, product.getStatus());
     }
 
     @Test
@@ -41,6 +41,6 @@ class ProductTest extends UseCaseTest {
 
         // then
         assertEquals(0, product.getCount());
-        assertEquals(ProductStatus.UNREGISTERED, product.getStatus());
+        assertEquals(ProductStatus.ACTIVE, product.getStatus());
     }
 }

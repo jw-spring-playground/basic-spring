@@ -11,7 +11,6 @@ import java.time.LocalDateTime;
 @Table(name = "product")
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
-@Builder
 public class Product extends BaseEntity {
     @Column(name = "name", nullable = false)
     private String name;
@@ -27,7 +26,7 @@ public class Product extends BaseEntity {
 
     @Enumerated(EnumType.STRING)
     @Column(name = "status", nullable = false)
-    private ProductStatus status = ProductStatus.UNREGISTERED;
+    private ProductStatus status = ProductStatus.ACTIVE;
 
     @Column(name = "created_at", nullable = false)
     private LocalDateTime createdAt = LocalDateTime.now();
@@ -35,15 +34,14 @@ public class Product extends BaseEntity {
     @Column(name = "updated_at", nullable = false)
     private LocalDateTime updatedAt = LocalDateTime.now();
 
+    @Builder
     public static Product create(String name, Long price, Long description, Long count, ProductStatus status) {
-        return Product.builder().
-            name(name).
-            price(price).
-            description(description).
-            count(count != null ? count : 0L).
-            status(status != null ? status : ProductStatus.UNREGISTERED).
-            createdAt(LocalDateTime.now()).
-            updatedAt(LocalDateTime.now()).
-            build();
+        return Product.builder()
+            .name(name)
+            .price(price)
+            .description(description)
+            .count(count != null ? count : 0L)
+            .status(status != null ? status : ProductStatus.ACTIVE)
+            .build();
     }
 }
