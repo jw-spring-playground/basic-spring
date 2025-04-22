@@ -10,7 +10,8 @@ import java.time.LocalDateTime;
 @Entity
 @Table(name = "product")
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-@AllArgsConstructor
+@AllArgsConstructor(access = AccessLevel.PRIVATE)
+@Builder
 public class Product extends BaseEntity {
     @Column(name = "name", nullable = false)
     private String name;
@@ -34,17 +35,15 @@ public class Product extends BaseEntity {
     @Column(name = "updated_at", nullable = false)
     private LocalDateTime updatedAt = LocalDateTime.now();
 
-
-    @Builder
     public static Product create(String name, Long price, Long description, Long count, ProductStatus status) {
-        return new Product(
-            name,
-            price,
-            count != null ? count : 0L,
-            description,
-            status != null ? status : ProductStatus.UNREGISTERED,
-            LocalDateTime.now(),
-            LocalDateTime.now()
-        );
+        return Product.builder().
+            name(name).
+            price(price).
+            description(description).
+            count(count != null ? count : 0L).
+            status(status != null ? status : ProductStatus.UNREGISTERED).
+            createdAt(LocalDateTime.now()).
+            updatedAt(LocalDateTime.now()).
+            build();
     }
 }
