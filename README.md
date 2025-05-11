@@ -20,13 +20,14 @@
 - 상품 신청은 부모님이 할 수 있다.
 - 등록은 산타만 할 수 있다.
 
-| 필드 이름       | 데이터 타입       | 설명       |
-|-------------|--------------|----------|
-| productId   | Long         | 상품 ID    |
-| isRegistered| Boolean      | 등록 여부   |
-| parentId    | Long         | 부모 ID    |
-| createdAt   | LocalDateTime | 생성 일시    |
-| updatedAt   | LocalDateTime | 수정 일시    |
+| 필드 이름        | 데이터 타입   | 설명       |
+|--------------|----------|----------|
+| name         | String   | 상품 이름    |
+| link         | String   | 상품 링크    |
+| isRegistered | Boolean  | 등록 여부    |
+| parentId     | Long     | 부모 ID    |
+| createdAt    | LocalDateTime | 생성 일시    |
+| updatedAt    | LocalDateTime | 수정 일시    |
 
 ### 부모님들
 

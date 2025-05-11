@@ -9,6 +9,7 @@ import java.time.LocalDateTime;
 @Getter
 @Entity
 @Table(name = "product")
+@Builder
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
 public class Product extends BaseEntity {
@@ -34,7 +35,6 @@ public class Product extends BaseEntity {
     @Column(name = "updated_at", nullable = false)
     private LocalDateTime updatedAt = LocalDateTime.now();
 
-    @Builder
     public static Product create(String name, Long price, Long description, Long count, ProductStatus status) {
         return Product.builder()
             .name(name)

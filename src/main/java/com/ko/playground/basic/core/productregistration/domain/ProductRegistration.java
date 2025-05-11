@@ -11,12 +11,17 @@ import java.time.LocalDateTime;
 @Getter
 @Entity
 @Table(name = "product_registration")
+@Builder
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
 public class ProductRegistration extends BaseEntity {
-    @Column(name = "product_id", nullable = false)
-    private Long productId;
+    @Column(name = "name", nullable = false)
+    private String name;
 
+    @Column(name = "link", nullable = false)
+    private String link;
+
+    @Builder.Default
     @Column(name = "is_registered", nullable = false)
     private Boolean isRegistered = false;
 
@@ -29,12 +34,12 @@ public class ProductRegistration extends BaseEntity {
     @Column(name = "updated_at", nullable = false)
     private LocalDateTime updatedAt = LocalDateTime.now();
 
-    @Builder
-    public static ProductRegistration create(Long productId, Long parentId) {
+    public static ProductRegistration create(String name, String link, Long parentId) {
         return ProductRegistration.builder()
-            .productId(productId)
-            .parentId(parentId)
-            .build();
+                .name(name)
+                .link(link)
+                .parentId(parentId)
+                .build();
     }
 
     public void register() {

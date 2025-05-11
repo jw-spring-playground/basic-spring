@@ -4,7 +4,6 @@ import com.ko.playground.basic.support.BaseEntity;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
-import jakarta.persistence.UniqueConstraint;
 import lombok.*;
 
 import java.time.LocalDateTime;
