@@ -39,6 +39,8 @@ public class ProductRegistration extends BaseEntity {
                 .name(name)
                 .link(link)
                 .parentId(parentId)
+                .createdAt(LocalDateTime.now())
+                .updatedAt(LocalDateTime.now())
                 .build();
     }
 
