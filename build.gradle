@@ -29,6 +29,10 @@ dependencies {
 	annotationProcessor 'org.projectlombok:lombok'
 
 	implementation 'org.springframework.boot:spring-boot-starter-security'
+	
+	// Redis Session
+	implementation 'org.springframework.boot:spring-boot-starter-data-redis'
+	implementation 'org.springframework.session:spring-session-data-redis'
 
 	// DB
 	implementation 'software.amazon.jdbc:aws-advanced-jdbc-wrapper:2.5.3'
