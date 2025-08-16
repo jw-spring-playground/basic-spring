@@ -2,7 +2,7 @@ package com.ko.playground.basic.core.productregistration.application.input.comma
 
 import com.ko.playground.basic.core.productregistration.domain.ProductRegistration;
 
-public record RegisterProductRegistrationCommand(
+public record RequestProductRegistrationCommand(
         String name,
         String link,
         Long parentId
