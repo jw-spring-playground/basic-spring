@@ -23,7 +23,7 @@ public class Product extends BaseEntity {
     private Long count = 0L;
 
     @Column(name = "description")
-    private Long description = null;
+    private String description = null;
 
     @Enumerated(EnumType.STRING)
     @Column(name = "status", nullable = false)
@@ -35,7 +35,7 @@ public class Product extends BaseEntity {
     @Column(name = "updated_at", nullable = false)
     private LocalDateTime updatedAt = LocalDateTime.now();
 
-    public static Product create(String name, Long price, Long description, Long count, ProductStatus status) {
+    public static Product create(String name, Long price, String description, Long count, ProductStatus status) {
         return Product.builder()
             .name(name)
             .price(price)

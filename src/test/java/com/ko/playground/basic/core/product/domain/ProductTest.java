@@ -14,7 +14,7 @@ class ProductTest extends UseCaseTest {
         String name = "Test Product";
         Long price = 1000L;
         Long count = 10L;
-        Long description = 1L;
+        String description = "description";
         ProductStatus status = ProductStatus.ACTIVE;
 
         // when
@@ -34,7 +34,7 @@ class ProductTest extends UseCaseTest {
         // given
         String name = "Test Product";
         Long price = 1000L;
-        Long description = 1L;
+        String description = "description";
 
         // when
         Product product = Product.create(name, price, description, null, null);
