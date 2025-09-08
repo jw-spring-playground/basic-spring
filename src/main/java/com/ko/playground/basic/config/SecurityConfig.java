@@ -37,7 +37,8 @@ public class SecurityConfig {
         http
             .csrf(AbstractHttpConfigurer::disable)
             .authorizeHttpRequests(auth -> auth
-                .requestMatchers("/api/parent/login", "/api/santa/login", "/api/logout").permitAll()
+                .requestMatchers("/api/parent/login", "/api/santa/login", "/api/logout", 
+                               "/api/parent/register", "/api/santa/register").permitAll()
                 .requestMatchers("/api/parent/**").hasRole("PARENT")
                 .requestMatchers("/api/santa/**").hasRole("SANTA")
                 .anyRequest().authenticated()

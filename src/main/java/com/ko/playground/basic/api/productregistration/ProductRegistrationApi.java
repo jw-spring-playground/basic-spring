@@ -1,4 +1,4 @@
-package com.ko.playground.basic.api.productregistration.adapter.input;
+package com.ko.playground.basic.api.productregistration;
 
 import com.ko.playground.basic.api.productregistration.adapter.input.web.dto.AllowedProductRequest;
 import com.ko.playground.basic.api.productregistration.adapter.input.web.dto.RegisterProductRequest;

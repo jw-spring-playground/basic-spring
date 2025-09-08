@@ -18,6 +18,10 @@ public class ParentService implements RegisterParent {
     @Override
     @Transactional
     public void register(RegisterParentCommand command, PasswordEncoder passwordEncoder) {
+        parentRepository.findByEmail(command.email()).ifPresent(parent -> {
+            throw new IllegalArgumentException("이미 존재하는 이메일입니다.");
+        });
+
         parentRepository.save(command.of(passwordEncoder.encode(command.password())));
     }
 }
