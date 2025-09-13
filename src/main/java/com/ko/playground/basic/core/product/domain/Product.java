@@ -1,6 +1,7 @@
 package com.ko.playground.basic.core.product.domain;
 
 import com.ko.playground.basic.support.BaseEntity;
+import jakarta.annotation.Nullable;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -35,13 +36,12 @@ public class Product extends BaseEntity {
     @Column(name = "updated_at", nullable = false)
     private LocalDateTime updatedAt = LocalDateTime.now();
 
-    public static Product create(String name, Long price, String description, Long count, ProductStatus status) {
+    public static Product create(String name, Long price, String description, Long count) {
         return Product.builder()
             .name(name)
             .price(price)
+            .count(count)
             .description(description)
-            .count(count != null ? count : 0L)
-            .status(status != null ? status : ProductStatus.ACTIVE)
             .build();
     }
 }

@@ -24,8 +24,9 @@ public class ProductRegistrationService implements RequestProductRegistration, A
 
     @Transactional
     @Override
-    public void allowed(AllowedProductRegistrationCommand command) {
+    public ProductRegistration allowed(AllowedProductRegistrationCommand command) {
         ProductRegistration productRegistration = productRegistrationRepository.findById(command.productRegistrationId()).orElseThrow();
         productRegistration.register();
+        return productRegistration;
     }
 }

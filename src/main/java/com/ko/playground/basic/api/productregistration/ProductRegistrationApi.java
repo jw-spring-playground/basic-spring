@@ -2,6 +2,7 @@ package com.ko.playground.basic.api.productregistration;
 
 import com.ko.playground.basic.api.productregistration.adapter.input.web.dto.AllowedProductRequest;
 import com.ko.playground.basic.api.productregistration.adapter.input.web.dto.RegisterProductRequest;
+import com.ko.playground.basic.api.productregistration.usecase.port.AllowedAndRegistrationProduct;
 import com.ko.playground.basic.auth.AuthenticatedParent;
 import com.ko.playground.basic.auth.AuthenticatedSanta;
 import com.ko.playground.basic.core.productregistration.application.input.AllowedProductRegistration;
@@ -17,7 +18,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 @AllArgsConstructor
 public class ProductRegistrationApi {
     private final RequestProductRegistration requestProductRegistration;
-    private final AllowedProductRegistration allowedProductRegistration;
+    private final AllowedAndRegistrationProduct allowedAndRegistrationProduct;
 
     @PostMapping("/v1/product/registration")
     ResponseEntity<Void> requestRegisterProduct(
@@ -33,7 +34,7 @@ public class ProductRegistrationApi {
             @Validated @RequestBody AllowedProductRequest request,
             AuthenticatedSanta santa
     ) {
-        allowedProductRegistration.allowed(request.toCommand(santa.getSantaId()));
+        allowedAndRegistrationProduct.allowedAndRegistration(request.toCommand(santa.getSantaId()));
         return ResponseEntity.status(201).build();
     }
 }

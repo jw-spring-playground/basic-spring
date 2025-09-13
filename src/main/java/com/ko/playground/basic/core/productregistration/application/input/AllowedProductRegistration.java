@@ -1,7 +1,8 @@
 package com.ko.playground.basic.core.productregistration.application.input;
 
 import com.ko.playground.basic.core.productregistration.application.input.command.AllowedProductRegistrationCommand;
+import com.ko.playground.basic.core.productregistration.domain.ProductRegistration;
 
 public interface AllowedProductRegistration {
-    void allowed(AllowedProductRegistrationCommand command);
+    ProductRegistration allowed(AllowedProductRegistrationCommand command);
 }
