@@ -11,8 +11,8 @@ class ChildrenTest extends UseCaseTest {
     @Description("성인 여부 확인")
     @Test
     void toCheckAdult() {
-        Children adult = Children.create("John", Sex.FEMALE, 2000L, 1L, 1L);
-        Children children = Children.create("John", Sex.FEMALE, 2007L, 1L, 1L);
+        Children adult = Children.create("John", Sex.FEMALE, 2000L, "주소", 1L);
+        Children children = Children.create("John", Sex.FEMALE, 2007L, "주소", 1L);
 
         assertTrue(adult.checkAdult());
         assertFalse(children.checkAdult());

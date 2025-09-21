@@ -15,10 +15,9 @@ class ProductTest extends UseCaseTest {
         Long price = 1000L;
         Long count = 10L;
         String description = "description";
-        ProductStatus status = ProductStatus.ACTIVE;
 
         // when
-        Product product = Product.create(name, price, description, count, status);
+        Product product = Product.create(name, price, description, count);
 
         // then
         assertEquals(name, product.getName());
@@ -37,7 +36,7 @@ class ProductTest extends UseCaseTest {
         String description = "description";
 
         // when
-        Product product = Product.create(name, price, description, null, null);
+        Product product = Product.create(name, price, description, 1L);
 
         // then
         assertEquals(0, product.getCount());
