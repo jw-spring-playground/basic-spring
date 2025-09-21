@@ -20,7 +20,7 @@ public class ChildrenService implements RegisterChildren {
             command.getName(),
             command.getSex(),
             command.getYearOfBirth(),
-            null,
+            command.getAddress(),
             command.getParentId()
         );
         childrenRepository.save(children);

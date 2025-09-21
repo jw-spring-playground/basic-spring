@@ -9,12 +9,14 @@ public class RegisterChildrenCommand {
     private final Long yearOfBirth;
     private final Sex sex;
     private final Long parentId;
+    private final String address;
 
-    public RegisterChildrenCommand(String name, Long yearOfBirth, String sex, Long parentId) {
+    public RegisterChildrenCommand(String name, Long yearOfBirth, String sex, Long parentId, String address) {
         this.name = name;
         this.yearOfBirth = yearOfBirth;
         this.sex = Sex.valueOf(sex);
         this.parentId = parentId;
+        this.address = address;
     }
 }
 
