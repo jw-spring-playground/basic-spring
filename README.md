@@ -68,6 +68,16 @@
 | createdAt            | LocalDateTime       | 생성 일시           |
 | updatedAt            | LocalDateTime       | 수정 일시           |
 
+### 배달 구역
+
+| 필드 이름   | 데이터 타입       | 설명          |
+|-------------|---------------------|---------------|
+| name        | String              | 배달 구역 이름    |
+| zipcode     | String              | 우편번호        |
+| street      | String              | 도로명 주소     |
+| city        | String              | 도시          |
+| createdAt   | LocalDateTime       | 생성 일시       |
+| updatedAt   | LocalDateTime       | 수정 일시       |
 
 ### 주문
 - 부모님들은 상품을 주문할 수 있다.
